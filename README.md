@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Patient Registration App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A **frontend-only** React app that lets you register patients and query their records using real Postgres in WebAssembly (PGlite), persisted to IndexedDB for multi-tab support.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Register New Patients**  
+  Capture name, age, and email—data is stored in a local Postgres-style DB.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Run Arbitrary SQL Queries**  
+  Inspect or manipulate your data right in the browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Persistent Storage**  
+  Uses IndexedDB under the hood, so data survives refreshes.
 
-### `npm test`
+- **Multi-Tab Sync**  
+  Open the app in multiple tabs and share the same dataset automatically.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js ≥ 14  
+- npm ≥ 6  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+1. **Clone the repo**  
+   ```bash
+   git clone <repo-url>
+   cd patient-registration-app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2)Install dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3)Start the dev server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm start
+The app will open at http://localhost:3000.
 
-## Learn More
+Usage
+1)Register a Patient
+Fill out the form on the left and click Register.
+A success or error message appears below the form.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2)Run SQL
+In the right panel, edit the SQL in the textarea (default is SELECT * FROM patients;) and click Run.
+Results show up in JSON format.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3)Multi-Tab
+Open another tab at http://localhost:3000 and you’ll see the same data—no extra setup needed.
 
-### Code Splitting
+Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+patient-registration-app/
+├── public/
+│   └── index.html
+└── src/
+    ├── components/
+    │   ├── RegisterForm.jsx
+    │   ├── RegisterForm.css
+    │   ├── QueryPanel.jsx
+    │   └── QueryPanel.css
+    ├── db.js
+    ├── App.js
+    ├── App.css
+    ├── index.js
+    └── index.css
