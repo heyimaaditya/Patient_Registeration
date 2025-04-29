@@ -34,40 +34,53 @@ A **frontend-only** React app that lets you register patients and query their re
    git clone <repo-url>
    cd patient-registration-app
 
-2)Install dependencies
+2.  **Install dependencies:**
 
-npm install
+    ```bash
+    npm install
+    ```
 
-3)Start the dev server
+3.  **Start the development server:**
 
-npm start
-The app will open at http://localhost:3000.
+    ```bash
+    npm start
+    ```
 
-Usage
-1)Register a Patient
-Fill out the form on the left and click Register.
-A success or error message appears below the form.
+    The app will open in your default browser at `http://localhost:3000`.
 
-2)Run SQL
-In the right panel, edit the SQL in the textarea (default is SELECT * FROM patients;) and click Run.
-Results show up in JSON format.
+## Usage
 
-3)Multi-Tab
-Open another tab at http://localhost:3000 and you’ll see the same data—no extra setup needed.
+Here's how to interact with the application:
 
-Project Structure
+1.  **Register a Patient:**
+    *   Fill out the form on the left side of the page with the patient's details.
+    *   Click the **Register** button.
+    *   A success or error message will appear below the form indicating the result of the registration attempt.
 
+2.  **Run SQL Queries:**
+    *   In the right panel, you'll find a textarea containing a default SQL query (`SELECT * FROM patients;`).
+    *   You can edit the SQL query within this textarea.
+    *   Click the **Run** button below the textarea.
+    *   The results of your query will be displayed in JSON format below the button.
+
+3.  **Multi-Tab Support:**
+    *   Open another tab or window in your browser and go to `http://localhost:3000`.
+    *   You will see the same data (e.g., newly registered patients) reflected across all open tabs accessing the application, demonstrating shared state or data synchronization.
+
+## Project Structure
+
+The project directory is organized as follows:
 patient-registration-app/
 ├── public/
-│   └── index.html
+│ └── index.html
 └── src/
-    ├── components/
-    │   ├── RegisterForm.jsx
-    │   ├── RegisterForm.css
-    │   ├── QueryPanel.jsx
-    │   └── QueryPanel.css
-    ├── db.js
-    ├── App.js
-    ├── App.css
-    ├── index.js
-    └── index.css
+├── components/
+│ ├── RegisterForm.jsx # Component for patient registration form
+│ ├── RegisterForm.css # Styles for RegisterForm
+│ ├── QueryPanel.jsx # Component for running SQL queries
+│ └── QueryPanel.css # Styles for QueryPanel
+├── db.js # Database connection or simulation logic
+├── App.js # Main application component
+├── App.css # Global styles for App
+├── index.js # Entry point for the React application
+└── index.css # Global styles
