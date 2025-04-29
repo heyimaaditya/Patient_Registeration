@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { initDB } from './db';
 import RegisterForm from './components/RegisterForm';
-import QueryPanel from './components/QueryPanel';
+import QueryPanel   from './components/queryPanel';
 import './App.css';
 
 function App() {
