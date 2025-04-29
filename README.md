@@ -67,20 +67,7 @@ Here's how to interact with the application:
     *   Open another tab or window in your browser and go to `http://localhost:3000`.
     *   You will see the same data (e.g., newly registered patients) reflected across all open tabs accessing the application, demonstrating shared state or data synchronization.
 
-## Project Structure
 
-The project directory is organized as follows:
-patient-registration-app/
-├── public/
-│ └── index.html
-└── src/
-├── components/
-│ ├── RegisterForm.jsx # Component for patient registration form
-│ ├── RegisterForm.css # Styles for RegisterForm
-│ ├── QueryPanel.jsx # Component for running SQL queries
-│ └── QueryPanel.css # Styles for QueryPanel
-├── db.js # Database connection or simulation logic
-├── App.js # Main application component
-├── App.css # Global styles for App
-├── index.js # Entry point for the React application
-└── index.css # Global styles
+##Author : Aaditya
+
+
